@@ -22,6 +22,19 @@ class usuario
     private $id;
 
     /**
+     * @var local[]
+     *
+     * @ORM\ManyToMany(targetEntity="local",mappedBy="perteneceusuario")
+     */
+    private $pertenecelocal;
+
+    /**
+     * @var local[]
+     *
+     * @ORM\ManyToMany(targetEntity="local",mappedBy="resusuario")
+     */
+    private $reslocal;
+    /**
      * @var string
      *
      * @ORM\Column(name="nombre", type="string", length=255)

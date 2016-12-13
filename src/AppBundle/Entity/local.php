@@ -22,6 +22,19 @@ class local
     private $id;
 
     /**
+     * @var usuario[]
+     *
+     * @ORM\ManyToMany(targetEntity="usuario",inversedBy="pertenecelocal")
+     */
+    private $perteneceusuario;
+
+    /**
+     * @var usuario[]
+     *
+     * @ORM\ManyToMany(targetEntity="usuario",inversedBy="reslocal")
+     */
+    private $resusuario;
+    /**
      * @var int
      *
      * @ORM\Column(name="planta", type="integer")
