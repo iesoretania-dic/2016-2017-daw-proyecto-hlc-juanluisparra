@@ -20,7 +20,12 @@ class proveedor
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    /**
+     * @var materiale
+     *
+     * @ORM\OneToMany(targetEntity="materiale",mappedBy="proveedores")
+     */
+    private $materialel;
     /**
      * @var string
      *

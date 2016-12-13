@@ -26,7 +26,15 @@ class materiale
      *@ORM\JoinColumn(nullable="false")
      * @ORM\ManyToOne(targetEntity="local",inversedBy="materiales")
      */
+
     private $locales;
+
+    /**
+     * @var proveedor
+     * @ORM\JoinColumn(nullable="false")
+     * @ORM\ManyToOne(targetEntity="proveedor",inversedBy="materialel")
+     */
+    private $proveedores;
     /**
      * @var string
      *
