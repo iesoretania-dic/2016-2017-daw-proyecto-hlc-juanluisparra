@@ -34,6 +34,13 @@ class local
      * @ORM\ManyToMany(targetEntity="usuario",inversedBy="reslocal")
      */
     private $resusuario;
+
+    /**
+     * @var materiale
+     *
+     * @ORM\OneToMany(targetEntity="materiale",mappedBy="locales")
+     */
+    private $materiales;
     /**
      * @var int
      *

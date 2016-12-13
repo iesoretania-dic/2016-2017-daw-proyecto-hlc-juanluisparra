@@ -22,6 +22,12 @@ class materiale
     private $id;
 
     /**
+     * @var local
+     *@ORM\JoinColumn(nullable="false")
+     * @ORM\ManyToOne(targetEntity="local",inversedBy="materiales")
+     */
+    private $locales;
+    /**
      * @var string
      *
      * @ORM\Column(name="marca", type="string", length=255)
