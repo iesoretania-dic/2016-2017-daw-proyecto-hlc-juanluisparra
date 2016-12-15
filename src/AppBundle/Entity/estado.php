@@ -22,6 +22,12 @@ class estado
     private $id;
 
     /**
+     * @var materiale
+     *
+     * @ORM\OneToMany(targetEntity="materiale",mappedBy="estados")
+     */
+    private  $estadom;
+    /**
      * @var string
      *
      * @ORM\Column(name="condicion", type="string", length=255)

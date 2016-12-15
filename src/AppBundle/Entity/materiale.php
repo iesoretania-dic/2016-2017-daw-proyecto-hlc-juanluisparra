@@ -35,6 +35,13 @@ class materiale
      * @ORM\ManyToOne(targetEntity="proveedor",inversedBy="materialel")
      */
     private $proveedores;
+
+    /**
+     * @var estado
+     *
+     * @ORM\ManyToOne(targetEntity="estado",inversedBy="estadom")
+     */
+    private $estados;
     /**
      * @var string
      *
