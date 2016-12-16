@@ -22,14 +22,14 @@ class usuario
     private $id;
 
     /**
-     * @var local[]
+     * @var local
      *
      * @ORM\ManyToMany(targetEntity="local",mappedBy="perteneceusuario")
      */
     private $pertenecelocal;
 
     /**
-     * @var local[]
+     * @var local
      *
      * @ORM\ManyToMany(targetEntity="local",mappedBy="resusuario")
      */

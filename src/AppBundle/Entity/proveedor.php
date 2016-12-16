@@ -21,7 +21,7 @@ class proveedor
      */
     private $id;
     /**
-     * @var materiale
+     * @var materiale[]
      *
      * @ORM\OneToMany(targetEntity="materiale",mappedBy="proveedores")
      */

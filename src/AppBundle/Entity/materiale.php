@@ -23,6 +23,7 @@ class materiale
 
     /**
      * @var local
+     * @ORM\JoinColumn(nullable=false)
      * @ORM\ManyToOne(targetEntity="local",inversedBy="materiales")
      */
 
@@ -30,12 +31,14 @@ class materiale
 
     /**
      * @var proveedor
+     * @ORM\JoinColumn(nullable=false)
      * @ORM\ManyToOne(targetEntity="proveedor",inversedBy="materialel")
      */
     private $proveedores;
 
     /**
      * @var estado
+     * @ORM\JoinColumn(nullable=false)
      * @ORM\ManyToOne(targetEntity="estado",inversedBy="estadom")
      */
     private $estados;

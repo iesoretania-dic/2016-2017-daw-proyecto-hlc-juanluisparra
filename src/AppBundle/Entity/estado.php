@@ -22,7 +22,7 @@ class estado
     private $id;
 
     /**
-     * @var materiale
+     * @var materiale[]
      *
      * @ORM\OneToMany(targetEntity="materiale",mappedBy="estados")
      */

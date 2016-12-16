@@ -22,21 +22,21 @@ class local
     private $id;
 
     /**
-     * @var usuario[]
+     * @var usuario
      *
      * @ORM\ManyToMany(targetEntity="usuario",inversedBy="pertenecelocal")
      */
     private $perteneceusuario;
 
     /**
-     * @var usuario[]
+     * @var usuario
      *
      * @ORM\ManyToMany(targetEntity="usuario",inversedBy="reslocal")
      */
     private $resusuario;
 
     /**
-     * @var materiale
+     * @var materiale[]
      *
      * @ORM\OneToMany(targetEntity="materiale",mappedBy="locales")
      */
