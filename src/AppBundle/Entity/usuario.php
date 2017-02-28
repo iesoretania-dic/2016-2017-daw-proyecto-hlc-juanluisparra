@@ -21,15 +21,9 @@ class usuario
      */
     private $id;
 
-    /**
-     * @var local
-     *
-     * @ORM\ManyToMany(targetEntity="local",mappedBy="perteneceusuario")
-     */
-    private $pertenecelocal;
 
     /**
-     * @var local
+     * @var local[]
      *
      * @ORM\ManyToMany(targetEntity="local",mappedBy="resusuario")
      */
@@ -199,5 +193,45 @@ class usuario
     {
         return $this->responsable;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->reslocal = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add reslocal
+     *
+     * @param \AppBundle\Entity\local $reslocal
+     *
+     * @return usuario
+     */
+    public function addReslocal(\AppBundle\Entity\local $reslocal)
+    {
+        $this->reslocal[] = $reslocal;
+
+        return $this;
+    }
+
+    /**
+     * Remove reslocal
+     *
+     * @param \AppBundle\Entity\local $reslocal
+     */
+    public function removeReslocal(\AppBundle\Entity\local $reslocal)
+    {
+        $this->reslocal->removeElement($reslocal);
+    }
+
+    /**
+     * Get reslocal
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReslocal()
+    {
+        return $this->reslocal;
+    }
+}

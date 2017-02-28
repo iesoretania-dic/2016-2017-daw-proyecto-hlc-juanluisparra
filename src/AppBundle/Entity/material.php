@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * materiale
+ * material
  *
- * @ORM\Table(name="materiale")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\materialeRepository")
+ * @ORM\Table(name="material")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\materialRepository")
  */
-class materiale
+class material
 {
     /**
      * @var int
@@ -84,12 +84,26 @@ class materiale
      */
     private $ubicacion;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_alta", type="date")
+     */
+    private $fechaAlta;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_baja", type="date")
+     */
+    private $fechaBaja;
 
     /**
      * Get id
      *
      * @return int
      */
+
     public function getId()
     {
         return $this->id;
@@ -100,7 +114,7 @@ class materiale
      *
      * @param string $marca
      *
-     * @return materiale
+     * @return material
      */
     public function setMarca($marca)
     {
@@ -124,7 +138,7 @@ class materiale
      *
      * @param string $modelo
      *
-     * @return materiale
+     * @return material
      */
     public function setModelo($modelo)
     {
@@ -148,7 +162,7 @@ class materiale
      *
      * @param integer $numserie
      *
-     * @return materiale
+     * @return material
      */
     public function setNumserie($numserie)
     {
@@ -172,7 +186,7 @@ class materiale
      *
      * @param integer $unidades
      *
-     * @return materiale
+     * @return material
      */
     public function setUnidades($unidades)
     {
@@ -196,7 +210,7 @@ class materiale
      *
      * @param string $proveedore
      *
-     * @return materiale
+     * @return material
      */
     public function setProveedore($proveedore)
     {
@@ -220,7 +234,7 @@ class materiale
      *
      * @param string $ubicacion
      *
-     * @return materiale
+     * @return material
      */
     public function setUbicacion($ubicacion)
     {
@@ -238,5 +252,124 @@ class materiale
     {
         return $this->ubicacion;
     }
-}
 
+    /**
+     * Set fechaAlta
+     *
+     * @param \DateTime $fechaAlta
+     *
+     * @return material
+     */
+    public function setFechaAlta($fechaAlta)
+    {
+        $this->fechaAlta = $fechaAlta;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaAlta
+     *
+     * @return \DateTime
+     */
+    public function getFechaAlta()
+    {
+        return $this->fechaAlta;
+    }
+
+    /**
+     * Set fechaBaja
+     *
+     * @param \DateTime $fechaBaja
+     *
+     * @return material
+     */
+    public function setFechaBaja($fechaBaja)
+    {
+        $this->fechaBaja = $fechaBaja;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaBaja
+     *
+     * @return \DateTime
+     */
+    public function getFechaBaja()
+    {
+        return $this->fechaBaja;
+    }
+
+    /**
+     * Set locales
+     *
+     * @param \AppBundle\Entity\local $locales
+     *
+     * @return material
+     */
+    public function setLocales(\AppBundle\Entity\local $locales)
+    {
+        $this->locales = $locales;
+
+        return $this;
+    }
+
+    /**
+     * Get locales
+     *
+     * @return \AppBundle\Entity\local
+     */
+    public function getLocales()
+    {
+        return $this->locales;
+    }
+
+    /**
+     * Set proveedores
+     *
+     * @param \AppBundle\Entity\proveedor $proveedores
+     *
+     * @return material
+     */
+    public function setProveedores(\AppBundle\Entity\proveedor $proveedores)
+    {
+        $this->proveedores = $proveedores;
+
+        return $this;
+    }
+
+    /**
+     * Get proveedores
+     *
+     * @return \AppBundle\Entity\proveedor
+     */
+    public function getProveedores()
+    {
+        return $this->proveedores;
+    }
+
+    /**
+     * Set estados
+     *
+     * @param \AppBundle\Entity\estado $estados
+     *
+     * @return material
+     */
+    public function setEstados(\AppBundle\Entity\estado $estados)
+    {
+        $this->estados = $estados;
+
+        return $this;
+    }
+
+    /**
+     * Get estados
+     *
+     * @return \AppBundle\Entity\estado
+     */
+    public function getEstados()
+    {
+        return $this->estados;
+    }
+}

@@ -22,23 +22,16 @@ class local
     private $id;
 
     /**
-     * @var usuario
-     *
-     * @ORM\ManyToMany(targetEntity="usuario",inversedBy="pertenecelocal")
-     */
-    private $perteneceusuario;
-
-    /**
-     * @var usuario
+     * @var usuario[]
      *
      * @ORM\ManyToMany(targetEntity="usuario",inversedBy="reslocal")
      */
     private $resusuario;
 
     /**
-     * @var materiale[]
+     * @var material[]
      *
-     * @ORM\OneToMany(targetEntity="materiale",mappedBy="locales")
+     * @ORM\OneToMany(targetEntity="material",mappedBy="locales")
      */
     private $materiales;
     /**
@@ -113,5 +106,80 @@ class local
     {
         return $this->nombre;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->resusuario = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->materiales = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add resusuario
+     *
+     * @param \AppBundle\Entity\usuario $resusuario
+     *
+     * @return local
+     */
+    public function addResusuario(\AppBundle\Entity\usuario $resusuario)
+    {
+        $this->resusuario[] = $resusuario;
+
+        return $this;
+    }
+
+    /**
+     * Remove resusuario
+     *
+     * @param \AppBundle\Entity\usuario $resusuario
+     */
+    public function removeResusuario(\AppBundle\Entity\usuario $resusuario)
+    {
+        $this->resusuario->removeElement($resusuario);
+    }
+
+    /**
+     * Get resusuario
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getResusuario()
+    {
+        return $this->resusuario;
+    }
+
+    /**
+     * Add materiale
+     *
+     * @param \AppBundle\Entity\material $materiale
+     *
+     * @return local
+     */
+    public function addMateriale(\AppBundle\Entity\material $materiale)
+    {
+        $this->materiales[] = $materiale;
+
+        return $this;
+    }
+
+    /**
+     * Remove materiale
+     *
+     * @param \AppBundle\Entity\material $materiale
+     */
+    public function removeMateriale(\AppBundle\Entity\material $materiale)
+    {
+        $this->materiales->removeElement($materiale);
+    }
+
+    /**
+     * Get materiales
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMateriales()
+    {
+        return $this->materiales;
+    }
+}

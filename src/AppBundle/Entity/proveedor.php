@@ -21,9 +21,9 @@ class proveedor
      */
     private $id;
     /**
-     * @var materiale[]
+     * @var material[]
      *
-     * @ORM\OneToMany(targetEntity="materiale",mappedBy="proveedores")
+     * @ORM\OneToMany(targetEntity="material",mappedBy="proveedores")
      */
     private $materialel;
     /**
@@ -129,5 +129,45 @@ class proveedor
     {
         return $this->fechaBaja;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->materialel = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add materialel
+     *
+     * @param \AppBundle\Entity\material $materialel
+     *
+     * @return proveedor
+     */
+    public function addMaterialel(\AppBundle\Entity\material $materialel)
+    {
+        $this->materialel[] = $materialel;
+
+        return $this;
+    }
+
+    /**
+     * Remove materialel
+     *
+     * @param \AppBundle\Entity\material $materialel
+     */
+    public function removeMaterialel(\AppBundle\Entity\material $materialel)
+    {
+        $this->materialel->removeElement($materialel);
+    }
+
+    /**
+     * Get materialel
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMaterialel()
+    {
+        return $this->materialel;
+    }
+}

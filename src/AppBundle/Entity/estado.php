@@ -22,9 +22,9 @@ class estado
     private $id;
 
     /**
-     * @var materiale[]
+     * @var material[]
      *
-     * @ORM\OneToMany(targetEntity="materiale",mappedBy="estados")
+     * @ORM\OneToMany(targetEntity="material",mappedBy="estados")
      */
     private  $estadom;
     /**
@@ -68,5 +68,45 @@ class estado
     {
         return $this->condicion;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->estadom = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add estadom
+     *
+     * @param \AppBundle\Entity\material $estadom
+     *
+     * @return estado
+     */
+    public function addEstadom(\AppBundle\Entity\material $estadom)
+    {
+        $this->estadom[] = $estadom;
+
+        return $this;
+    }
+
+    /**
+     * Remove estadom
+     *
+     * @param \AppBundle\Entity\material $estadom
+     */
+    public function removeEstadom(\AppBundle\Entity\material $estadom)
+    {
+        $this->estadom->removeElement($estadom);
+    }
+
+    /**
+     * Get estadom
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEstadom()
+    {
+        return $this->estadom;
+    }
+}
