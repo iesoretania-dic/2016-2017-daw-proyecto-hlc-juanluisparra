@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>listado de locale</h1>
+    <table class="table table-bordered  table-striped table-hover">
+        <thead>
+        <tr>
+            <th class="col-sm-2">planta</th>
+            <th class="col-sm-2">nombre</th>
+            <th class="col-sm-1"> </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for local in locales %}
+            <tr>
+                <td>{{ local.planta }}</td>
+                <td>{{ local.nombre }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
