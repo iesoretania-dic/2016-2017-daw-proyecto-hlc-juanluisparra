@@ -15,6 +15,10 @@
             <tr>
                 <td>{{ local.planta }}</td>
                 <td>{{ local.nombre }}</td>
+                <td>
+                    <a href="{{ path('modificar_local',{'id':local.id}) }}" class="btn btn-xs btn-info" title="Modificar"><i class="fa fa-pencil"></i> </a>
+                    <a href="{{ path('borrar_local',{'id':local.id}) }}" class="btn btn-xs btn-danger" title="Modificar"><i class="fa fa-trash"></i> </a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>

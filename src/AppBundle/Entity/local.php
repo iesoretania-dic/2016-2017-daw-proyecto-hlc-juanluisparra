@@ -47,7 +47,10 @@ class local
      * @ORM\Column(name="nombre", type="string", length=255)
      */
     private $nombre;
-
+    public function  __toString()
+    {
+        return $this->getNombre();
+    }
 
     /**
      * Get id
