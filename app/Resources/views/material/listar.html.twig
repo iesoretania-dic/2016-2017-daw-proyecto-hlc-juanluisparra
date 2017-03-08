@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>listado de materiales</h1>
+    <p>  <a href="{{ path('nuevo_local')}}" class="btn btn-info"><i class="fa fa-plus"></i>Agregar alumnos</a></p>
+    <table class="table table-bordered  table-striped table-hover">
+        <thead>
+        <tr>
+            <th class="col-sm-2">marca</th>
+            <th class="col-sm-2">modelo</th>
+            <th class="col-sm-2">numero de serie</th>
+            <th class="col-sm-2">unidades</th>
+            <th class="col-sm-2">proveedores</th>
+            <th class="col-sm-2">ubicacion</th>
+            <th class="col-sm-1"> </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for material in materiales %}
+            <tr>
+                <td>{{ material.marca }}</td>
+                <td> {{ material.modelo }}</td>
+                <td> {{ material.numserie }}</td>
+                <td> {{ material.unidades }}</td>
+                <td> {{ material.proveedore }}</td>
+                <td> {{ material.ubicacion }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

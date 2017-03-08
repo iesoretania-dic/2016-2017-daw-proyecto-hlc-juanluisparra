@@ -51,7 +51,7 @@ class LocalController extends Controller
                 return $this->redirectToRoute('listar_locales');
             }
             catch (Exception $e){
-                $this->addFlash('error'.'mal');
+                $this->addFlash('error','mal');
             }
 
         }
