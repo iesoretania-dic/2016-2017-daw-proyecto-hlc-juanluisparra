@@ -98,6 +98,11 @@ class material
      */
     private $fechaBaja;
 
+    public function  __toString()
+    {
+        return $this->getMarca();
+    }
+
     /**
      * Get id
      *

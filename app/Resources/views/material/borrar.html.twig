@@ -1,8 +1,8 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-<h1>confirmar eliminacion de {{ local }}</h1>
-    <form method="post" name="confirmar" action="{{ path('confirmar_borrar_local',{'id':local.id}) }}">
+<h1>confirmar eliminacion de {{ material }}</h1>
+    <form method="post" name="confirmar" action="{{ path('confirmar_borrar_material',{'id':material.id}) }}">
         <button type="submit" name="eliminar"><i class="fa fa-trash"></i>Si quiero eliminar </button>
         <a href="{{ path('listar_locales') }}" class="btn btn-info">No quiero volver</a>
     </form>

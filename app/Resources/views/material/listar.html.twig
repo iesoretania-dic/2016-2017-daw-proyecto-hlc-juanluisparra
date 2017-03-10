@@ -2,16 +2,18 @@
 
 {% block content %}
     <h1>listado de materiales</h1>
-    <p>  <a href="{{ path('nuevo_local')}}" class="btn btn-info"><i class="fa fa-plus"></i>Agregar alumnos</a></p>
+    <p>  <a href="{{ path('nuevo_material')}}" class="btn btn-info"><i class="fa fa-plus"></i>Agregar materiales</a></p>
     <table class="table table-bordered  table-striped table-hover">
         <thead>
         <tr>
-            <th class="col-sm-2">marca</th>
-            <th class="col-sm-2">modelo</th>
-            <th class="col-sm-2">numero de serie</th>
-            <th class="col-sm-2">unidades</th>
-            <th class="col-sm-2">proveedores</th>
-            <th class="col-sm-2">ubicacion</th>
+            <th class="col-sm-1">marca</th>
+            <th class="col-sm-1">modelo</th>
+            <th class="col-sm-1">numero de serie</th>
+            <th class="col-sm-1">unidades</th>
+            <th class="col-sm-1">proveedores</th>
+            <th class="col-sm-1">ubicacion</th>
+            <th class="col-sm-1">fecha alta</th>
+            <th class="col-sm-1">fecha baja</th>
             <th class="col-sm-1"> </th>
         </tr>
         </thead>
@@ -24,7 +26,12 @@
                 <td> {{ material.unidades }}</td>
                 <td> {{ material.proveedore }}</td>
                 <td> {{ material.ubicacion }}</td>
-
+                <td> {{ material.fechaAlta | date ('d/m/Y') }}</td>
+                <td> {{ material.fechaBaja | date ('d/m/Y') }}</td>
+                <td>
+                    <a href="{{ path('modificar_material',{'id':material.id}) }}" class="btn btn-xs btn-info" title="Modificar"><i class="fa fa-pencil"></i> </a>
+                    <a href="{{ path('borrar_material',{'id':material.id}) }}" class="btn btn-xs btn-danger" title="Modificar"><i class="fa fa-trash"></i> </a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
